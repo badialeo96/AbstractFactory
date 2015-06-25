@@ -5,9 +5,13 @@ public abstract class Luchador {
 	protected Arma arma;
 	protected Armadura armadura;
 	protected EstrategiaAtaque ea;
+	protected FabricaLuchador fabrica;
 	
-	public Luchador() {
+	public abstract void setearEquipamiento();
+	
+	public Luchador(FabricaLuchador f) {
 		super();
+		fabrica = f;
 		// TODO Auto-generated constructor stub
 	}
 

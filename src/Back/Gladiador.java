@@ -2,15 +2,21 @@ package Back;
 public class Gladiador extends Luchador {
 
 	public Gladiador(FabricaLuchador fl) {
-		super();
+		super(fl);
 		// TODO Auto-generated constructor stub
-		this.arma = fl.crearArma();
-		this.armadura = fl.crearArmadura();
+		setearEquipamiento();
 	}
 	
 	public String toString()
 	{
 		return "Soy un gladiador";
+	}
+
+	@Override
+	public void setearEquipamiento() {
+		// TODO Auto-generated method stub
+		this.arma = this.fabrica.crearArma();
+		this.armadura = fabrica.crearArmadura();
 	}
 	
 }
