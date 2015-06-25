@@ -4,6 +4,7 @@ public abstract class Luchador {
 
 	protected Arma arma;
 	protected Armadura armadura;
+	protected EstrategiaAtaque ea;
 	
 	public Luchador() {
 		super();
@@ -27,5 +28,34 @@ public abstract class Luchador {
 	public String toString()
 	{
 		return "asd";
+	}
+	public Objetivos visualizarObjetivo()
+	{
+		switch((int) Math.random()*(1-2)+2)
+		{
+			case 1:
+				return Objetivos.CERCANO;
+			case 2:
+				return Objetivos.LEJANO;
+			default:
+				return null;
+		}
+	}
+	public void atacar()
+	{
+		ea.recargar();
+		ea.atacar();
+	}
+	public void cambiarEstrategia()
+	{
+		switch (visualizarObjetivo())
+		{
+			case CERCANO:
+				this.ea = new EstrategiaCercano();
+				break;
+			case LEJANO:
+				this.ea = new EstrategiaDistancia();
+				break;
+		}
 	}
 }
