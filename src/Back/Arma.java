@@ -1,6 +1,11 @@
 package Back;
 
-public interface Arma {
+public abstract class Arma {
 
-	public String toString();
+	protected int daño;
+	public abstract String toString();
+
+	public int getDaño() {
+		return daño;
+	}
 }

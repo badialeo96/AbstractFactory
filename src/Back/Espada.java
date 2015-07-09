@@ -1,11 +1,16 @@
 package Back;
 
-public class Espada implements Arma {
+public class Espada extends Arma {
 
-	protected int daño = 3;
+	public Espada() {
+		super();
+		// TODO Auto-generated constructor stub
+		this.daño=3;
+	}
+
 	public String toString()
 	{
-		//System.out.println("hola");
-		return "El arma es Espada";
+		return "arma cercano: Espada";
 	}
+
 }

@@ -1,10 +1,16 @@
 package Back;
 
-public class Arco implements Arma {
+public class Arco extends Arma {
 
-	protected int daño = 2;
+	public Arco() {
+		super();
+		// TODO Auto-generated constructor stub
+		this.daño=2;
+	}
+
 	public String toString()
 	{
-		return "El arma es Arco";
+		return "arma distancia:  Arco";
 	}
+	
 }

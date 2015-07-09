@@ -4,70 +4,92 @@ import java.util.HashMap;
 
 public abstract class Luchador {
 
+	protected int vida;
 	protected Arma arma;
-	protected HashMap<String,Arma> mapa;
+	protected HashMap<Objetivos,Arma> armaDisp;
 	protected Armadura armadura;
 	protected EstrategiaAtaque ea;
+	protected HashMap<Objetivos,EstrategiaAtaque> eaDisp;
 	protected FabricaLuchador fabrica;
+	protected String nombre;
 	
-	public abstract void setearEquipamiento();
+	protected abstract void setearEquipamiento();
 	
-	public Luchador(FabricaLuchador f) {
+	public Luchador(FabricaLuchador f, String nombre) {
 		super();
-		fabrica = f;
+		this.nombre= nombre;
+		this.fabrica = f;
+		this.armaDisp = f.crearArmas(new HashMap <Objetivos,Arma>());
+		this.eaDisp = f.crearEA(new HashMap <Objetivos,EstrategiaAtaque>());
 		// TODO Auto-generated constructor stub
 	}
 
 	public void mostrarArma()
 	{
-		System.out.println(this.arma);
+		System.out.print(this.arma);
 	}
 
 	public void mostrarArmadura() {
-		System.out.println(this.armadura);
+		System.out.print(this.armadura);
 		
 	}
 
 	public void mostrarLuchador() {
 		// TODO Auto-generated method stub
-		System.out.println(this);
+		System.out.print(this);
 	}
+	
 	public String toString()
 	{
-		return "asd";
+		return "";
 	}
-	public Objetivos visualizarObjetivo()
+	
+	private Objetivos visualizarObjetivo()
 	{
-		switch((int) Math.random()*(1-2)+2)
+		return Objetivos.getRandomObjetivos();
+	}
+	
+	public boolean atacar(Luchador enemigo)
+	{
+		boolean muerte=false;
+		Objetivos objetivo=visualizarObjetivo();
+		cambiarEstrategia(objetivo);
+		muerte=ea.atacar(this,enemigo);
+		return muerte;
+	}
+	
+	private void cambiarEstrategia(Objetivos objetivo)
+	{
+		this.ea = eaDisp.get(objetivo);
+	}
+	
+	protected boolean herido(int daño)
+	{
+		boolean muerte=false;
+		this.vida-=daño;
+		if(this.vida<=0)
 		{
-			case 1:
-				return Objetivos.CERCANO;
-			case 2:
-				return Objetivos.LEJANO;
-			default:
-				return null;
+			muerte=true;
 		}
+		return muerte;
 	}
-	public void atacar(Luchador enemigo)
+
+	protected Arma getArmaDisp(Objetivos objetivo)
 	{
-		cambiarEstrategia();
-		ea.atacar(this,enemigo);
+		return armaDisp.get(objetivo);
 	}
-	public void cambiarEstrategia()
-	{
-		switch (visualizarObjetivo())
-		{
-			case CERCANO:
-				this.ea = new EstrategiaCercano();
-				break;
-			case LEJANO:
-				this.ea = new EstrategiaDistancia();
-				break;
-		}
+
+	protected void setArma(Arma arma) {
+		// TODO Auto-generated method stub
+		this.arma=arma;		
 	}
 
 	public Arma getArma() {
+		// TODO Auto-generated method stub
 		return arma;
 	}
-	
+	public void mostrarVida()
+	{
+		System.out.print(this.vida);
+	}
 }

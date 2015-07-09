@@ -1,15 +1,16 @@
 package Back;
 
-public class Lanza implements Arma {
+public class Lanza extends Arma {
 
-	protected int daño = 1;
-	
 	public Lanza() {
 		// TODO Auto-generated constructor stub
+		super();
+		this.daño=1;
 	}
 
 	public String toString()
 	{
-		return "El arma es Lanza";
+		return "arma distancia: Lanza";
 	}
+	
 }

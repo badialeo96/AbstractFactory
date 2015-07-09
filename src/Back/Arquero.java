@@ -1,22 +1,22 @@
 package Back;
 
 public class Arquero extends Luchador {
-
-	public Arquero(FabricaLuchador fabrica) {
-		// TODO Auto-generated constructor stub
-		super(fabrica);
+	
+	public Arquero(FabricaLuchador fabrica,String nombre) {
+		super(fabrica,nombre);
+		this.vida=10;
 		setearEquipamiento();
 	}
 
 	public String toString()
 	{
-		return "Soy un arquero";
+		return "Arquero "+this.nombre;
 	}
 
 	@Override
 	public void setearEquipamiento() {
 		// TODO Auto-generated method stub
-		this.arma = this.fabrica.crearArma();
+		this.arma = this.fabrica.elegirArma(this.armaDisp);
 		this.armadura = this.fabrica.crearArmadura();
 	}
 }

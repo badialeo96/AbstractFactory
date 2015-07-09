@@ -3,7 +3,7 @@ package Back;
 
 public class HandlerLuchador {
 
-	public Luchador crearLuchador(Utils tipo) {
+	public Luchador crearLuchador(Utils tipo,String nombre) {
 		// TODO Auto-generated method stub
 		Luchador l=null;
 		FabricaLuchador fl=null;
@@ -11,11 +11,11 @@ public class HandlerLuchador {
 		{
 			case GLADIADOR:
 				fl = new FabricaGladiador();
-				l = new Gladiador(fl);
+				l = new Gladiador(fl,nombre);
 				break;
 			case ARQUERO:
 				fl = new FabricaArquero();
-				l = new Arquero(fl);
+				l = new Arquero(fl,nombre);
 				break;
 		}
 		return l;
