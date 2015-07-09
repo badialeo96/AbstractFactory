@@ -5,8 +5,7 @@ public class Arquero extends Luchador {
 	public Arquero(FabricaLuchador fabrica) {
 		// TODO Auto-generated constructor stub
 		super(fabrica);
-		this.arma = fabrica.crearArma();
-		this.armadura = fabrica.crearArmadura();
+		setearEquipamiento();
 	}
 
 	public String toString()
@@ -17,6 +16,7 @@ public class Arquero extends Luchador {
 	@Override
 	public void setearEquipamiento() {
 		// TODO Auto-generated method stub
-		
+		this.arma = this.fabrica.crearArma();
+		this.armadura = this.fabrica.crearArmadura();
 	}
 }

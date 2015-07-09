@@ -16,7 +16,7 @@ public class Gladiador extends Luchador {
 	public void setearEquipamiento() {
 		// TODO Auto-generated method stub
 		this.arma = this.fabrica.crearArma();
-		this.armadura = fabrica.crearArmadura();
+		this.armadura = this.fabrica.crearArmadura();
 	}
 	
 }

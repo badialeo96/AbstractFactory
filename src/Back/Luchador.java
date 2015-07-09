@@ -1,8 +1,11 @@
 package Back;
 
+import java.util.HashMap;
+
 public abstract class Luchador {
 
 	protected Arma arma;
+	protected HashMap<String,Arma> mapa;
 	protected Armadura armadura;
 	protected EstrategiaAtaque ea;
 	protected FabricaLuchador fabrica;
