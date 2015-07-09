@@ -48,10 +48,10 @@ public abstract class Luchador {
 				return null;
 		}
 	}
-	public void atacar()
+	public void atacar(Luchador enemigo)
 	{
-		ea.recargar();
-		ea.atacar();
+		cambiarEstrategia();
+		ea.atacar(this,enemigo);
 	}
 	public void cambiarEstrategia()
 	{
@@ -65,4 +65,9 @@ public abstract class Luchador {
 				break;
 		}
 	}
+
+	public Arma getArma() {
+		return arma;
+	}
+	
 }

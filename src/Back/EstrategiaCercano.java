@@ -1,17 +1,12 @@
 package Back;
 
-public class EstrategiaCercano implements EstrategiaAtaque {
+public class EstrategiaCercano extends EstrategiaAtaque {
 
 	@Override
-	public void atacar() {
+	public void setArma() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void recargar() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

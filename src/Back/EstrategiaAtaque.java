@@ -1,7 +1,11 @@
 package Back;
 
-public interface EstrategiaAtaque {
+public abstract class EstrategiaAtaque {
 
-	public void atacar();
-	public void recargar();
+	public final void atacar(Luchador atacante, Luchador enemigo)
+	{	
+		setArma(atacante);
+		enemigo.herido(atacante.getArma().getDaño());
+	}
+	public abstract void setArma(Luchador atacante);
 }
