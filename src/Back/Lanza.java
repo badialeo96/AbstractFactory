@@ -2,7 +2,7 @@ package Back;
 
 public class Lanza extends Arma {
 
-	public Lanza() {
+	protected Lanza() {
 		// TODO Auto-generated constructor stub
 		super();
 		this.daño=1;

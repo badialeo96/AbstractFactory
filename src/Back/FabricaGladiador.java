@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class FabricaGladiador implements FabricaLuchador {
 
-	public FabricaGladiador() {
+	protected FabricaGladiador() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

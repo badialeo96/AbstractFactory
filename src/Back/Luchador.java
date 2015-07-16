@@ -15,7 +15,7 @@ public abstract class Luchador {
 	
 	protected abstract void setearEquipamiento();
 	
-	public Luchador(FabricaLuchador f, String nombre) {
+	protected Luchador(FabricaLuchador f, String nombre) {
 		super();
 		this.nombre= nombre;
 		this.fabrica = f;
@@ -84,7 +84,7 @@ public abstract class Luchador {
 		this.arma=arma;		
 	}
 
-	public Arma getArma() {
+	protected Arma getArma() {
 		// TODO Auto-generated method stub
 		return arma;
 	}

@@ -2,7 +2,7 @@ package Back;
 
 public class Arco extends Arma {
 
-	public Arco() {
+	protected Arco() {
 		super();
 		// TODO Auto-generated constructor stub
 		this.daño=2;

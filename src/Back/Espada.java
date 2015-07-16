@@ -2,7 +2,7 @@ package Back;
 
 public class Espada extends Arma {
 
-	public Espada() {
+	protected Espada() {
 		super();
 		// TODO Auto-generated constructor stub
 		this.daño=3;
