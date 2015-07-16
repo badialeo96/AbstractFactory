@@ -27,7 +27,7 @@ public class Principal {
 		System.out.println();
 		do
 		{
-			muerte=l1.atacar(l2);
+			l1.atacar(l2);
 			System.out.print("Atacando con ");
 			l1.mostrarLuchador();
 			System.out.print(" usando ");
@@ -45,7 +45,7 @@ public class Principal {
 				System.out.println(" HA SIDO VENCIDO!");
 				l2=null;
 			}
-		}while(!muerte);
+		}while(l2.estaVivo());
 		
 	}
 

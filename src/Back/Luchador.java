@@ -58,6 +58,10 @@ public abstract class Luchador {
 		return muerte;
 	}
 	
+	public boolean estaVivo(){
+		return vida>0;
+	}
+	
 	private void cambiarEstrategia(Objetivos objetivo)
 	{
 		this.ea = eaDisp.get(objetivo);
@@ -70,18 +74,19 @@ public abstract class Luchador {
 		if(this.vida<=0)
 		{
 			muerte=true;
+			vida = 0;
 		}
 		return muerte;
-	}
+	} 
 
 	protected Arma getArmaDisp(Objetivos objetivo)
 	{
 		return armaDisp.get(objetivo);
 	}
 
-	protected void setArma(Arma arma) {
+	protected void setArma(Objetivos obj) {
 		// TODO Auto-generated method stub
-		this.arma=arma;		
+		this.arma=armaDisp.get(obj);		
 	}
 
 	protected Arma getArma() {
