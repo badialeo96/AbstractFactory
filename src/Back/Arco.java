@@ -4,7 +4,7 @@ public class Arco extends Arma {
 
 	protected Arco() {
 		super();
-		// TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stuba
 		this.daño=2;
 	}
 
